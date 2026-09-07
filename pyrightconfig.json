@@ -1,0 +1,15 @@
+{
+    "typeCheckingMode": "off",
+    "include": [
+        "ml"
+    ],
+    "exclude": [
+        "**/node_modules",
+        "**/__pycache__",
+        "**/.*",
+        "**/ml/.venv"
+    ],
+    "reportMissingImports": false,
+    "reportGeneralTypeIssues": false,
+    "reportOptionalMemberAccess": false
+}

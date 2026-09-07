@@ -1,0 +1,17 @@
+check,column,violating_records,violating_pct
+Asset age < 0 or > 100,asset_age_years,0,0.0
+"Asset criticality score not in [0, 100]",asset_criticality_score,0,0.0
+"Traffic percentile not in [0.0, 1.0]",traffic_percentile,0,0.0
+Network neighbor degree < 0,network_neighbor_degree,0,0.0
+Affected services < 0,affected_services_if_blocked,0,0.0
+"Operational impact score not in [0, 100]",operational_impact_score,0,0.0
+Maintenance interval days <= 0,maintenance_interval_days,0,0.0
+Days since last maintenance < 0,days_since_last_maintenance,0,0.0
+Maintenance overdue days < 0,maintenance_overdue_days,0,0.0
+Failures last 30d < 0,failures_last_30d,0,0.0
+Failures last 90d < 0,failures_last_90d,0,0.0
+Failures last 365d < 0,failures_last_365d,0,0.0
+Recurrences < 0,same_defect_recurrences_365d,0,0.0
+Defect duration < 0,defect_duration_days,0,0.0
+Maintenance duration hours target <= 0 or > 24h,maintenance_duration_hours_target,0,0.0
+"Priority score target not in [0, 100]",priority_score_target,0,0.0

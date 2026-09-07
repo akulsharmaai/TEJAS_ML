@@ -1,0 +1,71 @@
+{
+  "dataset_name": "Railway Track Surface Faults Dataset",
+  "doi": "10.17632/8hxtgyyxrw.2",
+  "publisher": "Mendeley Data / Data in Brief (Elsevier)",
+  "license": "CC BY 4.0",
+  "fault_categories": [
+    {
+      "fault_name": "Squats",
+      "type": "Rolling Contact Fatigue",
+      "severity_range": [
+        1,
+        5
+      ],
+      "typical_department": "Engineering"
+    },
+    {
+      "fault_name": "Cracks",
+      "type": "Structural Rail Defect",
+      "severity_range": [
+        1,
+        5
+      ],
+      "typical_department": "Engineering"
+    },
+    {
+      "fault_name": "Flakings",
+      "type": "Surface Degradation",
+      "severity_range": [
+        1,
+        4
+      ],
+      "typical_department": "Engineering"
+    },
+    {
+      "fault_name": "Shellings",
+      "type": "Subsurface Fatigue",
+      "severity_range": [
+        1,
+        5
+      ],
+      "typical_department": "Engineering"
+    },
+    {
+      "fault_name": "Spallings",
+      "type": "Severe Metal Loss",
+      "severity_range": [
+        2,
+        5
+      ],
+      "typical_department": "Engineering"
+    },
+    {
+      "fault_name": "Grooves",
+      "type": "Mechanical Wear",
+      "severity_range": [
+        1,
+        4
+      ],
+      "typical_department": "Engineering"
+    },
+    {
+      "fault_name": "Joints Defect",
+      "type": "Fishplate/Glued Joint Defect",
+      "severity_range": [
+        1,
+        5
+      ],
+      "typical_department": "Engineering"
+    }
+  ]
+}

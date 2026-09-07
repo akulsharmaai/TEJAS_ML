@@ -1,0 +1,44 @@
+{
+  "source": "datameet/railways (derived from Indian Railways timetable/NTES)",
+  "total_routes_analyzed": 5208,
+  "total_stations_active": 747,
+  "train_types_distribution": {
+    "DEMU": 4,
+    "SF": 719,
+    "Pass": 2459,
+    "Exp": 1288,
+    "Mail": 19,
+    "JShtb": 40,
+    "GR": 52,
+    "MEMU": 297,
+    "": 15,
+    "Raj": 48,
+    "Shtb": 31,
+    "SKr": 42,
+    "Drnt": 48,
+    "Klkt": 3,
+    "Hyd": 121,
+    "Toy": 14,
+    "Del": 8
+  },
+  "station_daily_train_density": {
+    "min": 1,
+    "p25": 2,
+    "p50_median": 6,
+    "p75": 15,
+    "p90": 33,
+    "p99": 108,
+    "max": 263
+  },
+  "freight_to_passenger_ratios": {
+    "high_density_corridor_HDN": "40% Passenger, 60% Freight (Golden Quadrilateral / DFC feeders)",
+    "mixed_trunk_route": "55% Passenger, 45% Freight",
+    "branch_suburban_feeder": "75% Passenger, 25% Freight"
+  },
+  "operational_impact_guidelines": {
+    "LOW": "Branch lines / sidings, < 25 trains/day, minimal passenger delay risk",
+    "MEDIUM": "Standard double-track routes, 25-75 trains/day, manageable rerouting / headway buffer",
+    "HIGH": "Heavy trunk routes, 75-140 trains/day, high cascade delay potential",
+    "CRITICAL": "Super-dense corridors / Golden Quadrilateral / junction bottlenecks, > 140 trains/day, catastrophic network impact"
+  }
+}

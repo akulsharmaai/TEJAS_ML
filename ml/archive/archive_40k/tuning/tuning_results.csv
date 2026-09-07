@@ -1,0 +1,4 @@
+model_name,best_cv_f1,val_accuracy,val_precision_urgent,val_recall_urgent,val_f1_urgent,val_macro_f1,val_roc_auc,val_pr_auc,tn,fp,fn,tp,best_params,artifact_path
+XGBoost (Tuned),0.8192,0.8608,0.7664,0.8746,0.8169,0.8523,0.9281,0.8605,3299,568,267,1863,"{'subsample': 1.0, 'scale_pos_weight': 1.5, 'reg_lambda': 1.0, 'reg_alpha': 1.0, 'n_estimators': 150, 'min_child_weight': 5, 'max_depth': 4, 'learning_rate': 0.05, 'gamma': 0.5, 'colsample_bytree': 0.8}",models/tuned_models/xgboost_tuned.joblib
+Random Forest (Tuned),0.8164,0.8601,0.7675,0.8695,0.8153,0.8514,0.9195,0.8409,3306,561,278,1852,"{'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 0.3, 'max_depth': 20}",models/tuned_models/random_forest_tuned.joblib
+Logistic Regression (Tuned),0.784,0.8261,0.7112,0.8592,0.7782,0.8176,0.911,0.8339,3124,743,300,1830,{'C': 1.0},models/tuned_models/logistic_regression_tuned.joblib

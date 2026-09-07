@@ -1,0 +1,92 @@
+{
+  "asset_criticality": [
+    {
+      "level": "LOW",
+      "ordinal_value": 0,
+      "predicted_probability": 0.083,
+      "risk_percentage": 8.3,
+      "priority": "LOW"
+    },
+    {
+      "level": "MEDIUM",
+      "ordinal_value": 1,
+      "predicted_probability": 0.1087,
+      "risk_percentage": 10.87,
+      "priority": "LOW"
+    },
+    {
+      "level": "HIGH",
+      "ordinal_value": 2,
+      "predicted_probability": 0.2543,
+      "risk_percentage": 25.43,
+      "priority": "LOW"
+    },
+    {
+      "level": "CRITICAL",
+      "ordinal_value": 3,
+      "predicted_probability": 0.4608,
+      "risk_percentage": 46.08,
+      "priority": "MEDIUM"
+    }
+  ],
+  "defect_severity": [
+    {
+      "level": "LOW",
+      "ordinal_value": 0,
+      "predicted_probability": 0.1663,
+      "risk_percentage": 16.63,
+      "priority": "LOW"
+    },
+    {
+      "level": "MEDIUM",
+      "ordinal_value": 1,
+      "predicted_probability": 0.4608,
+      "risk_percentage": 46.08,
+      "priority": "MEDIUM"
+    },
+    {
+      "level": "HIGH",
+      "ordinal_value": 2,
+      "predicted_probability": 0.927,
+      "risk_percentage": 92.7,
+      "priority": "CRITICAL"
+    },
+    {
+      "level": "CRITICAL",
+      "ordinal_value": 3,
+      "predicted_probability": 0.9503,
+      "risk_percentage": 95.03,
+      "priority": "CRITICAL"
+    }
+  ],
+  "operational_impact": [
+    {
+      "level": "LOW",
+      "ordinal_value": 0,
+      "predicted_probability": 0.1392,
+      "risk_percentage": 13.92,
+      "priority": "LOW"
+    },
+    {
+      "level": "MEDIUM",
+      "ordinal_value": 1,
+      "predicted_probability": 0.1555,
+      "risk_percentage": 15.55,
+      "priority": "LOW"
+    },
+    {
+      "level": "HIGH",
+      "ordinal_value": 2,
+      "predicted_probability": 0.3661,
+      "risk_percentage": 36.61,
+      "priority": "MEDIUM"
+    },
+    {
+      "level": "CRITICAL",
+      "ordinal_value": 3,
+      "predicted_probability": 0.4608,
+      "risk_percentage": 46.08,
+      "priority": "MEDIUM"
+    }
+  ]
+}

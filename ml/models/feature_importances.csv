@@ -1,0 +1,121 @@
+model_target,rank,feature,importance
+failure_within_30d_target_Logistic Regression (Balanced),1,days_since_last_maintenance,4.00207
+failure_within_30d_target_Logistic Regression (Balanced),2,maintenance_overdue_days,3.09487
+failure_within_30d_target_Logistic Regression (Balanced),3,defect_severity_ord,1.70891
+failure_within_30d_target_Logistic Regression (Balanced),4,state_Delhi,1.07856
+failure_within_30d_target_Logistic Regression (Balanced),5,state_Goa,0.88326
+failure_within_30d_target_Logistic Regression (Balanced),6,state_Jammu and Kashmir,0.85697
+failure_within_30d_target_Logistic Regression (Balanced),7,state_Himachal Pradesh,0.75505
+failure_within_30d_target_Logistic Regression (Balanced),8,maintenance_interval_days,0.66372
+failure_within_30d_target_Logistic Regression (Balanced),9,state_Andhra Pradesh,0.62419
+failure_within_30d_target_Logistic Regression (Balanced),10,zone_SCR,0.58827
+failure_within_30d_target_Logistic Regression (Balanced),11,defect_type_incorrect aspect indication,0.58786
+failure_within_30d_target_Logistic Regression (Balanced),12,zone_NFR,0.57548
+failure_within_30d_target_Logistic Regression (Balanced),13,defect_type_missing/loose fastening,0.53646
+failure_within_30d_target_Logistic Regression (Balanced),14,zone_ECoR,0.52646
+failure_within_30d_target_Logistic Regression (Balanced),15,zone_NR,0.52207
+failure_within_30d_target_Random Forest (Balanced),1,defect_severity_ord,0.21016
+failure_within_30d_target_Random Forest (Balanced),2,maintenance_overdue_days,0.11366
+failure_within_30d_target_Random Forest (Balanced),3,maintenance_overdue_ratio,0.10195
+failure_within_30d_target_Random Forest (Balanced),4,days_since_last_maintenance,0.0865
+failure_within_30d_target_Random Forest (Balanced),5,traffic_impact_ratio,0.05053
+failure_within_30d_target_Random Forest (Balanced),6,defect_duration_days,0.0452
+failure_within_30d_target_Random Forest (Balanced),7,asset_age_years,0.02449
+failure_within_30d_target_Random Forest (Balanced),8,failures_last_365d,0.02405
+failure_within_30d_target_Random Forest (Balanced),9,affected_services_if_blocked,0.02365
+failure_within_30d_target_Random Forest (Balanced),10,asset_criticality_score,0.0228
+failure_within_30d_target_Random Forest (Balanced),11,operational_impact_score,0.02166
+failure_within_30d_target_Random Forest (Balanced),12,traffic_percentile,0.02008
+failure_within_30d_target_Random Forest (Balanced),13,scheduled_services_count_proxy,0.01982
+failure_within_30d_target_Random Forest (Balanced),14,same_defect_recurrences_365d,0.01881
+failure_within_30d_target_Random Forest (Balanced),15,recurrence_ratio,0.01783
+block_required_target_Logistic Regression (Balanced),1,defect_severity_ord,1.80498
+block_required_target_Logistic Regression (Balanced),2,state_Himachal Pradesh,1.08032
+block_required_target_Logistic Regression (Balanced),3,state_Uttarakhand,0.86026
+block_required_target_Logistic Regression (Balanced),4,defect_type_fitting looseness,0.79756
+block_required_target_Logistic Regression (Balanced),5,defect_type_geometry deviation,0.65957
+block_required_target_Logistic Regression (Balanced),6,zone_ECoR,0.63911
+block_required_target_Logistic Regression (Balanced),7,state_Assam,0.60183
+block_required_target_Logistic Regression (Balanced),8,defect_type_boom locking fault,0.56572
+block_required_target_Logistic Regression (Balanced),9,defect_type_drainage blockage,0.53849
+block_required_target_Logistic Regression (Balanced),10,defect_type_conductor damage,0.5195
+block_required_target_Logistic Regression (Balanced),11,traffic_percentile,0.49591
+block_required_target_Logistic Regression (Balanced),12,defect_type_motor current abnormality,0.46398
+block_required_target_Logistic Regression (Balanced),13,defect_type_poor drainage,0.42528
+block_required_target_Logistic Regression (Balanced),14,defect_type_joint heating,0.39529
+block_required_target_Logistic Regression (Balanced),15,same_defect_recurrences_365d,0.39527
+block_required_target_Random Forest (Balanced),1,defect_severity_ord,0.21737
+block_required_target_Random Forest (Balanced),2,traffic_impact_ratio,0.06507
+block_required_target_Random Forest (Balanced),3,affected_services_if_blocked,0.06273
+block_required_target_Random Forest (Balanced),4,maintenance_overdue_days,0.05435
+block_required_target_Random Forest (Balanced),5,days_since_last_maintenance,0.05424
+block_required_target_Random Forest (Balanced),6,maintenance_overdue_ratio,0.05101
+block_required_target_Random Forest (Balanced),7,defect_duration_days,0.0469
+block_required_target_Random Forest (Balanced),8,operational_impact_score,0.04295
+block_required_target_Random Forest (Balanced),9,asset_criticality_score,0.04291
+block_required_target_Random Forest (Balanced),10,traffic_percentile,0.03867
+block_required_target_Random Forest (Balanced),11,asset_age_years,0.03559
+block_required_target_Random Forest (Balanced),12,scheduled_services_count_proxy,0.03018
+block_required_target_Random Forest (Balanced),13,asset_criticality_ord,0.01169
+block_required_target_Random Forest (Balanced),14,network_neighbor_degree,0.01145
+block_required_target_Random Forest (Balanced),15,failures_last_365d,0.01044
+priority_score_target_Ridge Regression,1,defect_severity_ord,12.32477
+priority_score_target_Ridge Regression,2,operational_impact_score,4.50729
+priority_score_target_Ridge Regression,3,state_Himachal Pradesh,2.62291
+priority_score_target_Ridge Regression,4,defect_type_connection looseness,2.54777
+priority_score_target_Ridge Regression,5,state_Puducherry,2.53903
+priority_score_target_Ridge Regression,6,state_Uttarakhand,2.48124
+priority_score_target_Ridge Regression,7,zone_?,2.33042
+priority_score_target_Ridge Regression,8,state_Kerala,1.99468
+priority_score_target_Ridge Regression,9,defect_type_joint heating,1.88322
+priority_score_target_Ridge Regression,10,state_Jammu and Kashmir,1.80488
+priority_score_target_Ridge Regression,11,state_Delhi,1.79963
+priority_score_target_Ridge Regression,12,state_Gujarat,1.75522
+priority_score_target_Ridge Regression,13,state_Odisha,1.64941
+priority_score_target_Ridge Regression,14,zone_SR,1.43948
+priority_score_target_Ridge Regression,15,zone_NCR,1.39336
+priority_score_target_Random Forest Regressor,1,defect_severity_ord,0.65464
+priority_score_target_Random Forest Regressor,2,operational_impact_score,0.15973
+priority_score_target_Random Forest Regressor,3,maintenance_overdue_days,0.01891
+priority_score_target_Random Forest Regressor,4,maintenance_overdue_ratio,0.01626
+priority_score_target_Random Forest Regressor,5,asset_age_years,0.01507
+priority_score_target_Random Forest Regressor,6,days_since_last_maintenance,0.01462
+priority_score_target_Random Forest Regressor,7,defect_duration_days,0.01338
+priority_score_target_Random Forest Regressor,8,affected_services_if_blocked,0.01163
+priority_score_target_Random Forest Regressor,9,asset_criticality_score,0.01159
+priority_score_target_Random Forest Regressor,10,traffic_impact_ratio,0.01123
+priority_score_target_Random Forest Regressor,11,traffic_percentile,0.00861
+priority_score_target_Random Forest Regressor,12,scheduled_services_count_proxy,0.00769
+priority_score_target_Random Forest Regressor,13,network_neighbor_degree,0.00306
+priority_score_target_Random Forest Regressor,14,failures_last_365d,0.00192
+priority_score_target_Random Forest Regressor,15,inspection_image_available,0.00146
+maintenance_duration_hours_target_Ridge Regression,1,defect_severity_ord,0.98305
+maintenance_duration_hours_target_Ridge Regression,2,state_Goa,0.68934
+maintenance_duration_hours_target_Ridge Regression,3,state_Uttarakhand,0.62963
+maintenance_duration_hours_target_Ridge Regression,4,state_Tripura,0.58126
+maintenance_duration_hours_target_Ridge Regression,5,state_Delhi,0.46811
+maintenance_duration_hours_target_Ridge Regression,6,asset_type_Traction Substation,0.42494
+maintenance_duration_hours_target_Ridge Regression,7,safety_function_traction power supply,0.42494
+maintenance_duration_hours_target_Ridge Regression,8,defect_type_DGA anomaly,0.40693
+maintenance_duration_hours_target_Ridge Regression,9,state_Puducherry,0.40395
+maintenance_duration_hours_target_Ridge Regression,10,zone_CR,0.40226
+maintenance_duration_hours_target_Ridge Regression,11,zone_SR,0.3915
+maintenance_duration_hours_target_Ridge Regression,12,zone_SECR,0.39007
+maintenance_duration_hours_target_Ridge Regression,13,state_Chhattisgarh,0.37874
+maintenance_duration_hours_target_Ridge Regression,14,state_Kerala,0.36668
+maintenance_duration_hours_target_Ridge Regression,15,state_Maharashtra,0.35668
+maintenance_duration_hours_target_Random Forest Regressor,1,defect_severity_ord,0.31909
+maintenance_duration_hours_target_Random Forest Regressor,2,department_S&T,0.10638
+maintenance_duration_hours_target_Random Forest Regressor,3,traffic_impact_ratio,0.05156
+maintenance_duration_hours_target_Random Forest Regressor,4,defect_duration_days,0.05021
+maintenance_duration_hours_target_Random Forest Regressor,5,asset_age_years,0.04512
+maintenance_duration_hours_target_Random Forest Regressor,6,asset_criticality_score,0.03297
+maintenance_duration_hours_target_Random Forest Regressor,7,days_since_last_maintenance,0.03108
+maintenance_duration_hours_target_Random Forest Regressor,8,maintenance_overdue_ratio,0.02718
+maintenance_duration_hours_target_Random Forest Regressor,9,operational_impact_score,0.02706
+maintenance_duration_hours_target_Random Forest Regressor,10,affected_services_if_blocked,0.02467
+maintenance_duration_hours_target_Random Forest Regressor,11,maintenance_overdue_days,0.02178
+maintenance_duration_hours_target_Random Forest Regressor,12,network_neighbor_degree,0.01388
+maintenance_duration_hours_target_Random Forest Regressor,13,scheduled_services_count_proxy,0.01332
+maintenance_duration_hours_target_Random Forest Regressor,14,traffic_percentile,0.01317
+maintenance_duration_hours_target_Random Forest Regressor,15,maintenance_interval_days,0.01279

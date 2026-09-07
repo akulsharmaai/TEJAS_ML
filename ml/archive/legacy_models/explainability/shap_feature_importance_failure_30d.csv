@@ -1,0 +1,21 @@
+feature,mean_abs_shap
+defect_severity_ord,0.9332252162631235
+days_since_last_maintenance,0.8148152746594282
+maintenance_overdue_days,0.40116869637478864
+traffic_percentile,0.23505556719589954
+maintenance_interval_days,0.2000272819700453
+traffic_impact_ratio,0.15277194073552364
+operational_impact_score,0.1028914078443499
+failures_last_365d,0.09587613355918118
+defect_duration_days,0.07549374598870068
+zone_SCR,0.058125245574299135
+same_defect_recurrences_365d,0.04062131231469879
+state_Andhra Pradesh,0.04053245812092523
+scheduled_services_count_proxy,0.038129816825914924
+zone_NR,0.03764593909651936
+recurrence_ratio,0.03695638290827345
+asset_criticality_ord,0.03562980625950102
+inspection_image_available,0.02580084432027603
+zone_ECoR,0.025753343643885457
+network_neighbor_degree,0.02486872884016504
+defect_type_missing/loose fastening,0.02426466038314528

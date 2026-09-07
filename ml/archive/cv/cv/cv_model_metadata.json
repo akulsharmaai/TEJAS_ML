@@ -1,0 +1,58 @@
+{
+  "model_architecture": "MobileNetV3-Small (Transfer Learning)",
+  "num_classes": 7,
+  "class_names": [
+    "Cracks",
+    "Flakings",
+    "Grooves",
+    "Joints",
+    "Shellings",
+    "Spallings",
+    "Squats"
+  ],
+  "class_to_idx": {
+    "Cracks": 0,
+    "Flakings": 1,
+    "Grooves": 2,
+    "Joints": 3,
+    "Shellings": 4,
+    "Spallings": 5,
+    "Squats": 6
+  },
+  "cv_to_tejas_defect_map": {
+    "Cracks": "structural crack indication",
+    "Flakings": "surface shelling/squat",
+    "Grooves": "corrugation/wear",
+    "Joints": "switch rail gap",
+    "Shellings": "surface shelling/squat",
+    "Spallings": "surface shelling/squat",
+    "Squats": "surface shelling/squat"
+  },
+  "training_epochs": 8,
+  "batch_size": 64,
+  "total_dataset_size": 5153,
+  "train_samples": 3607,
+  "val_samples": 773,
+  "test_samples": 773,
+  "overall_test_accuracy": 0.9017,
+  "overall_test_weighted_f1": 0.9035,
+  "overall_test_macro_f1": 0.8704,
+  "overall_test_weighted_recall": 0.9017,
+  "input_size": [
+    224,
+    224
+  ],
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "created_at": "2026-08-31 03:49:29"
+}

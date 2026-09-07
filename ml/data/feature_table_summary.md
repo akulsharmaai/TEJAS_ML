@@ -1,0 +1,37 @@
+| Feature Name | Source | User/System | Use in Model? | Reason |
+|--------------|--------|-------------|---------------|--------|
+| event_id | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| task_id | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| event_date | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| asset_id | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| department | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| asset_type | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| safety_function | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| station_code | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| station_name | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| zone | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| state | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| section_id | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| asset_age_years | SYNTHETIC/MIXED | System | Yes | Kept after audit |
+| asset_criticality_score | SYNTHETIC/MIXED | System | Yes | Kept after audit |
+| asset_criticality | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| scheduled_services_count_proxy | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| network_neighbor_degree | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| alternative_route_available | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| affected_services_if_blocked | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| maintenance_interval_days | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| days_since_last_maintenance | SYNTHETIC/MIXED | System | Yes | Kept after audit |
+| maintenance_overdue_days | SYNTHETIC/MIXED | System | Yes | Kept after audit |
+| failures_last_30d | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| failures_last_90d | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| failures_last_365d | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| same_defect_recurrences_365d | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| defect_type | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| officer_observation | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| defect_duration_days | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| inspection_image_available | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| defect_severity_label | SYNTHETIC/MIXED | Mixed | Yes | Kept after audit |
+| real_section_code | REAL | Mixed | Yes | Kept after audit |
+| real_daily_train_count | REAL | Mixed | Yes | Kept after audit |
+| real_criticality_score | REAL | System | Yes | Kept after audit |
+| is_real_traffic_data | REAL | Mixed | Yes | Kept after audit |

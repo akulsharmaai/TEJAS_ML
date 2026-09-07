@@ -1,0 +1,15 @@
+{
+    "typeCheckingMode": "off",
+    "include": [
+        "."
+    ],
+    "exclude": [
+        "**/node_modules",
+        "**/__pycache__",
+        "**/.*",
+        ".venv"
+    ],
+    "reportMissingImports": false,
+    "reportGeneralTypeIssues": false,
+    "reportOptionalMemberAccess": false
+}

@@ -1,0 +1,218 @@
+[
+  {
+    "case_type": "High-Risk Maintenance Task",
+    "task_id": "TSK-IR-000367",
+    "asset_id": "AST-SNT-03365",
+    "department": "S&T",
+    "asset_type": "Digital Axle Counter (MSDAC/SSDAC)",
+    "risk_score": 0.9063,
+    "priority": "CRITICAL",
+    "raw_attributes": {
+      "defect_type": "Evaluator Card Processing Fault",
+      "defect_severity": "CRITICAL",
+      "asset_criticality": "CRITICAL",
+      "operational_impact": "HIGH",
+      "days_overdue": 0,
+      "days_since_defect": 7,
+      "trains_per_day": 41,
+      "goods_trains_per_day": 15,
+      "failures_last_12_months": 5,
+      "previous_failures": 5,
+      "maintenance_duration_hours": 2.09
+    },
+    "top_contributing_factors": [
+      {
+        "factor": "defect_severity",
+        "raw_value": "CRITICAL",
+        "shap_impact": 1.0974,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "asset_criticality",
+        "raw_value": "CRITICAL",
+        "shap_impact": 0.9342,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "operational_impact",
+        "raw_value": "HIGH",
+        "shap_impact": 0.3748,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "failures_last_12_months",
+        "raw_value": "5",
+        "shap_impact": 0.2663,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "trains_per_day",
+        "raw_value": "41",
+        "shap_impact": -0.234,
+        "direction": "DECREASES_RISK (-)"
+      },
+      {
+        "factor": "previous_failures",
+        "raw_value": "5",
+        "shap_impact": 0.1275,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "num_open_defects",
+        "raw_value": "3",
+        "shap_impact": 0.0766,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "days_overdue",
+        "raw_value": "0",
+        "shap_impact": -0.0752,
+        "direction": "DECREASES_RISK (-)"
+      }
+    ]
+  },
+  {
+    "case_type": "Medium-Risk Maintenance Task",
+    "task_id": "TSK-IR-000475",
+    "asset_id": "AST-TRD-01879",
+    "department": "Traction",
+    "asset_type": "Traction Power Transformer (25kV/21.6MVA)",
+    "risk_score": 0.481,
+    "priority": "MEDIUM",
+    "raw_attributes": {
+      "defect_type": "Dissolved Gas Analysis (DGA) Acetylene Surge",
+      "defect_severity": "CRITICAL",
+      "asset_criticality": "HIGH",
+      "operational_impact": "MEDIUM",
+      "days_overdue": 0,
+      "days_since_defect": 10,
+      "trains_per_day": 34,
+      "goods_trains_per_day": 11,
+      "failures_last_12_months": 3,
+      "previous_failures": 5,
+      "maintenance_duration_hours": 5.75
+    },
+    "top_contributing_factors": [
+      {
+        "factor": "operational_impact",
+        "raw_value": "MEDIUM",
+        "shap_impact": -1.1234,
+        "direction": "DECREASES_RISK (-)"
+      },
+      {
+        "factor": "defect_severity",
+        "raw_value": "CRITICAL",
+        "shap_impact": 1.0044,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "asset_criticality",
+        "raw_value": "HIGH",
+        "shap_impact": 0.3212,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "num_open_defects",
+        "raw_value": "1",
+        "shap_impact": -0.2813,
+        "direction": "DECREASES_RISK (-)"
+      },
+      {
+        "factor": "failures_last_12_months",
+        "raw_value": "3",
+        "shap_impact": 0.2053,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "trains_per_day",
+        "raw_value": "34",
+        "shap_impact": -0.152,
+        "direction": "DECREASES_RISK (-)"
+      },
+      {
+        "factor": "previous_failures",
+        "raw_value": "5",
+        "shap_impact": 0.1164,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "asset_age_years",
+        "raw_value": "14.7",
+        "shap_impact": 0.0729,
+        "direction": "INCREASES_RISK (+)"
+      }
+    ]
+  },
+  {
+    "case_type": "Low-Risk Routine Task",
+    "task_id": "TSK-IR-000141",
+    "asset_id": "AST-SNT-03363",
+    "department": "S&T",
+    "asset_type": "Interlocked Level Crossing (LC Gate)",
+    "risk_score": 0.0588,
+    "priority": "LOW",
+    "raw_attributes": {
+      "defect_type": "Boom Locking Plunger Misaligned",
+      "defect_severity": "CRITICAL",
+      "asset_criticality": "MEDIUM",
+      "operational_impact": "LOW",
+      "days_overdue": 0,
+      "days_since_defect": 3,
+      "trains_per_day": 70,
+      "goods_trains_per_day": 37,
+      "failures_last_12_months": 0,
+      "previous_failures": 3,
+      "maintenance_duration_hours": 2.19
+    },
+    "top_contributing_factors": [
+      {
+        "factor": "asset_criticality",
+        "raw_value": "MEDIUM",
+        "shap_impact": -2.3103,
+        "direction": "DECREASES_RISK (-)"
+      },
+      {
+        "factor": "operational_impact",
+        "raw_value": "LOW",
+        "shap_impact": -0.9989,
+        "direction": "DECREASES_RISK (-)"
+      },
+      {
+        "factor": "defect_severity",
+        "raw_value": "CRITICAL",
+        "shap_impact": 0.7946,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "failure_rate_indicator",
+        "raw_value": "0.00/yr",
+        "shap_impact": -0.163,
+        "direction": "DECREASES_RISK (-)"
+      },
+      {
+        "factor": "num_open_defects",
+        "raw_value": "3",
+        "shap_impact": 0.1629,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "trains_per_day",
+        "raw_value": "70",
+        "shap_impact": -0.1281,
+        "direction": "DECREASES_RISK (-)"
+      },
+      {
+        "factor": "defect_type_Boom Locking Plunger Misaligned",
+        "raw_value": "Active (1)",
+        "shap_impact": 0.1268,
+        "direction": "INCREASES_RISK (+)"
+      },
+      {
+        "factor": "freight_traffic_ratio",
+        "raw_value": "52.9%",
+        "shap_impact": 0.0816,
+        "direction": "INCREASES_RISK (+)"
+      }
+    ]
+  }
+]

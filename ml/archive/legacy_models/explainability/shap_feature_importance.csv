@@ -1,0 +1,138 @@
+feature,mean_abs_shap,rank
+defect_severity,1.2262937,1
+asset_criticality,1.0771577,2
+operational_impact,0.8163294,3
+num_open_defects,0.19260906,4
+days_overdue,0.1330423,5
+trains_per_day,0.10605938,6
+failures_last_12_months,0.099576846,7
+previous_failures,0.08780168,8
+failure_rate_indicator,0.050507255,9
+asset_age_years,0.03881297,10
+maintenance_duration_hours,0.03187089,11
+maintenance_overdue_ratio,0.02597026,12
+days_since_defect,0.023851035,13
+freight_traffic_ratio,0.023127578,14
+days_since_last_maintenance,0.022109784,15
+asset_type_Switch Expansion Joint (SEJ),0.0025102207,16
+department_S&T,0.0022184586,17
+defect_type_Boom Locking Plunger Misaligned,0.0015413474,18
+asset_type_Girder Bridge / Culvert Bearing,0.0012615577,19
+maintenance_frequency_Fortnightly,0.00074171775,20
+defect_type_Bed Block Structural Crack,0.00069040596,21
+defect_type_Missing / Broken Elastic Rail Clips (ERC),0.0006826896,22
+asset_type_Turnout / Points & Crossing (1 in 12 / 1 in 8.5),0.000665169,23
+defect_type_SEJ Gap Beyond Permissible Thermal Limit,0.0005360762,24
+department_Engineering,0.0005347157,25
+maintenance_frequency_Monthly,0.0004791192,26
+defect_type_Rocker / Roller Bearing Seizure,0.00039318146,27
+department_Traction,0.00032852922,28
+maintenance_frequency_Half-Yearly,0.0003263018,29
+asset_type_Ballast Cushion & Formation,0.00030354763,30
+defect_type_Severe Contact Wire Wear (>20% cross-section),0.00029988226,31
+asset_type_Electronic Interlocking (EI Rack),0.00028079678,32
+defect_type_Gauge Corner Cracking (GCC),0.0002653797,33
+defect_type_Rail Corrugation & Wear,0.00025363133,34
+asset_type_Elastic Rail Clip & Fastenings,0.00023849348,35
+defect_type_Squat (Rolling Contact Fatigue),0.00023719444,36
+defect_type_Telegram Transmission Bit Error / Reset Trip,0.00021700538,37
+defect_type_Silica Gel Breather Saturated & Moisture Ingress,0.0001910532,38
+asset_type_Rails (60kg/52kg),0.00018635379,39
+defect_type_Mud Pumping & Foul Ballast in Monsoon,0.00018263994,40
+defect_type_Stretcher Bar Distortion,0.00017760205,41
+defect_type_Vacuum Bottle Contact Resistance High,0.00016718701,42
+defect_type_Ground Connection Rod Bush Wear,0.00014946025,43
+asset_type_DC Track Circuit (TC),0.00013225581,44
+defect_type_Strand Severed / Loose Outer Strand,0.00012574552,45
+asset_type_Color Light Signal (LED Unit),9.5533826e-05,46
+asset_type_Interlocked Level Crossing (LC Gate),8.60772e-05,47
+asset_type_Contact Wire (107/150 sq mm Cu),8.039226e-05,48
+defect_type_DC-DC Converter Ripple Exceeds Limit,6.856744e-05,49
+asset_type_Catenary Wire (65/125 sq mm),0.0,50
+asset_type_Cantilever Assembly & Regulating Bracket,0.0,51
+asset_type_25kV Vacuum Circuit Breaker (VCB),0.0,52
+asset_type_Auto Tensioning Device (ATD 3:1 Pulley),0.0,53
+defect_type_Check Rail Clearance Deviation,0.0,54
+defect_type_Central Sleeper Spacing Fault,0.0,55
+defect_type_Center Bound Cracking Under Dynamic Load,0.0,56
+defect_type_Cabinet Overheating & Fan Filter Choke,0.0,57
+asset_type_Traction Power Transformer (25kV/21.6MVA),0.0,58
+asset_type_Signalling Power Supply / IPS,0.0,59
+asset_type_Section Insulator Assembly,0.0,60
+defect_type_Auxiliary Switch Chatter / Oxidation,0.0,61
+defect_type_Ballast Deficiency & Caking,0.0,62
+defect_type_Ballast Resistance Low in Rain,0.0,63
+defect_type_Battery Bank Individual Cell Voltage Low,0.0,64
+defect_type_Arcing Horn Burnout & Gap Excessive,0.0,65
+defect_type_Bearing Greasing Depletion & Tilt,0.0,66
+defect_type_Bond Wire Severed / High Resistance,0.0,67
+defect_type_Bridle Wire Tension Discrepancy,0.0,68
+asset_type_Glued Insulated Rail Joint (GJ),0.0,69
+asset_type_Prestressed Concrete Sleepers (PSC),0.0,70
+asset_type_Electric Point Machine (IRS/Siemens),0.0,71
+asset_type_Digital Axle Counter (MSDAC/SSDAC),0.0,72
+asset_type_Neutral Section (PTFE type),0.0,73
+defect_type_Optical Fiber Communication Loss,0.0,74
+defect_type_Operating Mechanism Pneumatic / SF6 Pressure Low,0.0,75
+defect_type_Nose of Crossing Severe Wear,0.0,76
+defect_type_Longitudinal Sleeper Cracking,0.0,77
+defect_type_Local Kink / Arc Blemish,0.0,78
+defect_type_Lock Bar & Split Pin Obstruction,0.0,79
+defect_type_LED Aspect Cluster Partial Failure (>20%),0.0,80
+defect_type_Liner Missing / Crushed,0.0,81
+defect_type_Insulating End Post Crushed,0.0,82
+defect_type_Insert Loose / Corroded,0.0,83
+defect_type_Inverter Module Fault / Load Transfer,0.0,84
+defect_type_Insulator Glaze Puncture / Flashover Mark,0.0,85
+defect_type_Feed End Resistance Drift,0.0,86
+defect_type_Fishplate Bolt Loose / Sheared,0.0,87
+defect_type_Formation Subsidence / Settlement,0.0,88
+defect_type_Friction Clutch Slippage / Over-Torque,0.0,89
+defect_type_Dropper Clip Loose / Damaged,0.0,90
+defect_type_Drive Motor High Current Draw / Stall,0.0,91
+defect_type_Dissolved Gas Analysis (DGA) Acetylene Surge,0.0,92
+defect_type_Current Sensor Threshold Mismatch / Blank Signal,0.0,93
+defect_type_Fastening Bolt Sheared,0.0,94
+defect_type_Expansion Joint Choked with Debris,0.0,95
+defect_type_Evaluator Card Processing Fault,0.0,96
+defect_type_Electrical Insulation Resistance Drop,0.0,97
+defect_type_Contact Wire Height & Stagger Deviation,0.0,98
+defect_type_Corrosive Pitting Near Industrial Area,0.0,99
+defect_type_Circuit Closer Contact Chattering,0.0,100
+defect_type_Bushing Oil Leakage & Thermal Hotspot,0.0,101
+defect_type_Porcelain / Composite Insulator Flashover Tracking,0.0,102
+defect_type_Rail Seat Abrasion & Deterioration,0.0,103
+defect_type_Rubber Pad Perished / Displaced,0.0,104
+defect_type_Pulley Bearing Seizure / Stiff Movement,0.0,105
+defect_type_Transformer ECR Current Drop,0.0,106
+defect_type_Track Relay Drop / False Occupancy,0.0,107
+defect_type_Tongue Rail Chipping / Wear,0.0,108
+defect_type_Thermit Weld Defect,0.0,109
+defect_type_Swivelling Clip Stiff / Jammed,0.0,110
+defect_type_Surge Protection Device (SPD) Blown,0.0,111
+defect_type_Stay Arm / Bracket Tube Corrosion,0.0,112
+defect_type_Stock Rail Gauge Corner Cut,0.0,113
+defect_type_Slack Packing & Void Under Sleepers,0.0,114
+defect_type_Stainless Steel Wire Rope Strands Snapped,0.0,115
+defect_type_Standby CPU Card Health Mismatch,0.0,116
+defect_type_Roller Plate Seized / Jammed,0.0,117
+defect_type_Runner Strip Erosion & Arcing Grooves,0.0,118
+defect_type_Section Insulator Sag / Level Defect,0.0,119
+defect_type_Shelling & Spalling,0.0,120
+defect_type_Signal Post Alignment Deviation,0.0,121
+defect_type_PTFE Insulating Rod Tracking & Surface Arcing,0.0,122
+defect_type_Outdoor Sensor Clamp Loose Due to Vibration,0.0,123
+defect_type_Point Detection Contact Carbonization,0.0,124
+maintenance_frequency_Annual,0.0,125
+maintenance_frequency_Quarterly,0.0,126
+defect_type_Winding Temperature Alarm Trip,0.0,127
+defect_type_X-Y Dimension Out of Temperature Chart Limit,0.0,128
+defect_type_Wheel Sensor Detection Coil Misalignment,0.0,129
+defect_type_Trip Coil Timing Exceeds Tolerance,0.0,130
+defect_type_Transverse Rail Fatigue Crack,0.0,131
+defect_type_Transition Joint Loose / Uneven,0.0,132
+defect_type_Vital Input/Output Card Communication Error,0.0,133
+defect_type_Winch Wire Rope Frayed,0.0,134
+defect_type_Warning Hooter & Flashers Disconnected,0.0,135
+defect_type_Wheel Burn & Scabbing,0.0,136
+maintenance_frequency_Weekly,0.0,137

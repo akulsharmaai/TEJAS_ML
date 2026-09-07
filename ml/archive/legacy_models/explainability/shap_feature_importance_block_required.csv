@@ -1,0 +1,21 @@
+feature,mean_abs_shap
+defect_severity_ord,0.9803994103488988
+traffic_percentile,0.3129361323724034
+operational_impact_score,0.17772073196943292
+asset_criticality_score,0.11207447922787372
+alternative_route_available,0.100598079923793
+traffic_impact_ratio,0.08704055877008607
+asset_age_years,0.07670209660962873
+maintenance_overdue_days,0.0645557818609283
+scheduled_services_count_proxy,0.04816152463427144
+failures_last_365d,0.0419774453575818
+zone_SCR,0.0400707689349858
+state_Uttar Pradesh,0.03928863309127167
+department_Engineering,0.034812116340809364
+zone_ECoR,0.03375032441033365
+state_Tamil Nadu,0.030041794080891207
+department_Traction,0.029569153199436652
+network_neighbor_degree,0.0288373597140234
+department_S&T,0.02823571263515008
+state_Andhra Pradesh,0.027442540699216013
+defect_type_poor drainage,0.02530317452334224

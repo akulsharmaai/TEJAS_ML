@@ -1,0 +1,5 @@
+test_name,rates,is_monotonic,status
+Defect Severity Monotonicity on Failure Risk (LOW -> CRITICAL),"[np.float64(0.0157), np.float64(0.097), np.float64(0.4312), np.float64(0.8454)]",True,PASS
+Asset Criticality Monotonicity on Priority Score (LOW -> CRITICAL),"[np.float64(24.09), np.float64(33.93), np.float64(40.76), np.float64(47.05)]",True,PASS
+Maintenance Overdue Monotonicity on Failure Risk,"[0.0516, 0.1116, 0.1833, 0.2907, 0.4798]",True,PASS
+Operational Impact Monotonicity on Block Requirement,"[0.1279, 0.2217, 0.2619, 0.3432]",True,PASS

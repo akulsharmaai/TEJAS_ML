@@ -1,0 +1,14 @@
+{
+  "failure_within_30d_target": {
+    "best_model": "Logistic Regression (Tuned)",
+    "calibrated_threshold": 0.25999999999999995,
+    "f2_threshold": 0.27999999999999997,
+    "min_target_recall": 0.85
+  },
+  "block_required_target": {
+    "best_model": "Logistic Regression (Tuned)",
+    "calibrated_threshold": 0.26999999999999996,
+    "f2_threshold": 0.26999999999999996,
+    "min_target_recall": 0.85
+  }
+}

@@ -1,0 +1,5 @@
+=== PROVENANCE MAPPING REPORT ===
+Total TEJAS records: 10000
+Total 28K traffic records: 28190
+Matched precisely on section codes (AAA_BBB): 7869 (78.69%)
+Unmatched (used global medians): 2131 (21.31%)

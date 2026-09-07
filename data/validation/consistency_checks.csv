@@ -1,0 +1,7 @@
+check,violations,status
+Failures last 30d <= Failures last 90d,0,PASS
+Failures last 90d <= Failures last 365d,0,PASS
+Same defect recurrences 365d <= Failures last 365d,0,PASS
+"maintenance_overdue_days == max(0, days_since_last_maintenance - maintenance_interval_days)",0,PASS
+affected_services_if_blocked <= scheduled_services_count_proxy,0,PASS
+Monotonic mean priority score ordering (LOW < MEDIUM < HIGH < CRITICAL),0,PASS
