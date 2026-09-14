@@ -31,6 +31,9 @@ from backend.schemas import (
     OfficerIncidentInput
 )
 from backend.asset_service import asset_service
+from backend.app.routers.telemetry import router as telemetry_router, manager as telemetry_manager
+from backend.app.routers.caution_orders import router as caution_orders_router
+
 
 # Configure logging
 logging.basicConfig(
@@ -41,7 +44,7 @@ logger = logging.getLogger("railway_api")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
-    logger.info("Initializing TEJAS ML API...")
+    logger.info("Initializing TEJAS ML API & Telemetry Engine...")
     # predictor is initialized as a singleton
     yield
     logger.info("Shutting down Railway Maintenance ML API.")
@@ -64,6 +67,20 @@ app.add_middleware(
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
+
+app.include_router(telemetry_router)
+app.include_router(caution_orders_router)
+
+
+
+@app.post("/broadcast/telemetry")
+async def broadcast_telemetry(payload: dict):
+    """
+    HTTP POST endpoint to broadcast a telemetry event or emergency defect alert to all connected WebSocket clients.
+    """
+    await telemetry_manager.broadcast(payload)
+    return {"status": "broadcasted", "payload_type": payload.get("event_type", "UNKNOWN")}
+
 
 
 @app.exception_handler(RequestValidationError)

@@ -26,8 +26,12 @@ import {
   DEPARTMENT_DATA,
   SEVERITY_LEVELS
 } from './constants';
+import { EmergencyBanner } from './components/EmergencyBanner';
+import { CautionOrders } from './pages/CautionOrders';
+import { useNotification } from './context/NotificationContext';
 
 const API_BASE_URL = `http://${window.location.hostname}:8000`;
+
 
 // Real Master Pilot Registered Asset Presets
 const OFFICER_PRESETS = [
@@ -80,8 +84,13 @@ const getNowLocalDateTime = () => {
 };
 
 export default function App() {
+  const { connectionStatus, latestTelemetry } = useNotification();
+  const [activeTab, setActiveTab] = useState('incident_report'); // 'incident_report' | 'caution_orders'
+
   // Primary Officer Incident Form State
+
   const [officerForm, setOfficerForm] = useState({
+
     asset_id: 'AST-001877',
     defect_type: 'structural crack indication',
     defect_severity: 'HIGH',
@@ -110,8 +119,8 @@ export default function App() {
   // Accordion Toggles
   const [showDeveloperPanel, setShowDeveloperPanel] = useState(false);
 
-  // Periodic Health Check
-  const checkHealth = async () => {
+  // Periodic Health Check (Runs once on mount + every 30s)
+  const checkHealth = useCallback(async () => {
     try {
       const res = await fetch(`${API_BASE_URL}/health`);
       if (res.ok) {
@@ -123,122 +132,82 @@ export default function App() {
     } catch {
       setBackendHealth({ online: false, checking: false, details: null });
     }
-  };
-
-  useEffect(() => {
-    let isMounted = true;
-    const runCheck = async () => {
-      try {
-        const res = await fetch(`${API_BASE_URL}/health`);
-        if (res.ok && isMounted) {
-          const data = await res.json();
-          setBackendHealth({ online: true, checking: false, details: data });
-        } else if (isMounted) {
-          setBackendHealth({ online: false, checking: false, details: null });
-        }
-      } catch {
-        if (isMounted) {
-          setBackendHealth({ online: false, checking: false, details: null });
-        }
-      }
-    };
-    runCheck();
-    const interval = setInterval(runCheck, 15000);
-    return () => {
-      isMounted = false;
-      clearInterval(interval);
-    };
-  }, []);
-
-  // Fetch verified asset details whenever Asset ID changes
-  const fetchAssetTelemetry = useCallback((assetId) => {
-    let isCurrent = true;
-    (async () => {
-      if (!assetId || assetId.trim().length < 3) {
-        if (isCurrent) {
-          setRetrievedAsset(null);
-          setAssetFetchError(null);
-        }
-        return;
-      }
-      try {
-        const res = await fetch(`${API_BASE_URL}/assets/${encodeURIComponent(assetId.trim())}`);
-        if (res.ok && isCurrent) {
-          const data = await res.json();
-          setRetrievedAsset(data);
-          setAssetFetchError(null);
-
-          // Synchronize available defect dropdown for the detected department
-          const dept = data.department;
-          const availableDefects = DEPARTMENT_DATA[dept]?.defects || [];
-          setOfficerForm(prev => {
-            if (!availableDefects.includes(prev.defect_type)) {
-              return { ...prev, defect_type: availableDefects[0] || prev.defect_type };
-            }
-            return prev;
-          });
-        } else if (isCurrent) {
-          setRetrievedAsset(null);
-          setAssetFetchError(`Asset ID '${assetId}' is not found in master railway registry.`);
-        }
-      } catch (err) {
-        if (isCurrent) {
-          setRetrievedAsset(null);
-          setAssetFetchError(`Failed to query asset registry service. Error: ${err.message}`);
-        }
-      }
-    })();
-    return () => {
-      isCurrent = false;
-    };
   }, []);
 
   useEffect(() => {
-    if (officerForm.asset_id) {
-      const cleanup = fetchAssetTelemetry(officerForm.asset_id);
-      return cleanup;
-    }
-  }, [officerForm.asset_id, fetchAssetTelemetry]);
+    checkHealth();
+    const interval = setInterval(checkHealth, 30000);
+    return () => clearInterval(interval);
+  }, [checkHealth]);
 
-  // Asset search for quick lookup autocomplete
-  const searchAssets = async (q) => {
-    setAssetSearchQuery(q);
-    if (!q || q.length < 2) {
-      setAssetSearchResults([]);
-      setShowSearchResults(false);
+  // Fetch asset details whenever Asset ID changes
+  const fetchAssetContext = useCallback(async (assetId) => {
+    if (!assetId || assetId.trim().length < 3) {
+      setRetrievedAsset(null);
+      setAssetFetchError(null);
       return;
     }
     try {
-      const res = await fetch(`${API_BASE_URL}/assets?query=${encodeURIComponent(q)}&limit=8`);
+      const res = await fetch(`${API_BASE_URL}/assets/${encodeURIComponent(assetId.trim())}`);
       if (res.ok) {
         const data = await res.json();
-        setAssetSearchResults(data);
-        setShowSearchResults(true);
+        setRetrievedAsset(data);
+        setAssetFetchError(null);
+      } else {
+        setRetrievedAsset(null);
+        setAssetFetchError(`Asset ID '${assetId}' not found in registry.`);
       }
-    } catch {
-      setAssetSearchResults([]);
+    } catch (err) {
+      setRetrievedAsset(null);
+      setAssetFetchError(`Asset service unavailable: ${err.message}`);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchAssetContext(officerForm.asset_id);
+  }, [officerForm.asset_id, fetchAssetContext]);
+
+
+
+  const handleAssetSearch = async (query) => {
+    setSearchQuery(query);
+    if (!query || query.length < 2) {
+      setSearchResults([]);
+      return;
+    }
+    setIsSearching(true);
+    try {
+      const res = await fetch(`${API_BASE_URL}/assets?query=${encodeURIComponent(query)}&limit=8`);
+      if (res.ok) {
+        const data = await res.json();
+        setSearchResults(data);
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsSearching(false);
     }
   };
 
-  const selectAssetFromSearch = (asset) => {
+  const selectSearchedAsset = (asset) => {
     setOfficerForm(prev => ({
       ...prev,
       asset_id: asset.asset_id,
-      defect_type: DEPARTMENT_DATA[asset.department]?.defects[0] || prev.defect_type
+      task_id: `INC-2026-08-${asset.asset_id.slice(-3)}`
     }));
     setRetrievedAsset(asset);
-    setAssetFetchError(null);
-    setShowSearchResults(false);
-    setAssetSearchQuery('');
+    setSearchQuery('');
+    setSearchResults([]);
   };
 
   const handleOfficerChange = (e) => {
-    const { name, value, type } = e.target;
+    const { name, value, type, checked } = e.target;
     setOfficerForm(prev => ({
       ...prev,
-      [name]: type === 'number' ? (value === '' ? '' : Number(value)) : value
+      [name]: type === 'checkbox' ? (checked ? 1 : 0) : value
     }));
   };
+  const handleInputChange = handleOfficerChange;
 
   const handlePresetSelect = (preset) => {
     setOfficerForm({
@@ -260,77 +229,53 @@ export default function App() {
       asset_id: 'AST-001877',
       defect_type: 'structural crack indication',
       defect_severity: 'HIGH',
-      officer_observation: '',
+      officer_observation: 'Active structural crack propagating along bearing abutment under bridge girder.',
       inspection_datetime: getNowLocalDateTime(),
       days_since_defect: 3,
       num_open_defects: 1,
       inspection_image_available: 1,
-      task_id: 'INC-2026-08-001'
+      task_id: 'INC-2026-08-1877'
     });
     setPrediction(null);
     setError(null);
   };
 
-  // Submit Incident Report to POST /predict/officer
   const handleSubmitIncident = async (e) => {
-    if (e) e.preventDefault();
+    e.preventDefault();
     setLoading(true);
     setError(null);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/predict/officer`, {
+      const payload = {
+        task_id: officerForm.task_id,
+        asset_id: officerForm.asset_id,
+        defect_type: officerForm.defect_type,
+        defect_severity: officerForm.defect_severity,
+        officer_observation: officerForm.officer_observation,
+        days_since_defect: parseFloat(officerForm.days_since_defect) || 0,
+        inspection_image_available: Boolean(officerForm.inspection_image_available)
+      };
+
+      const res = await fetch(`${API_BASE_URL}/predict/officer`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(officerForm)
+        body: JSON.stringify(payload)
       });
 
-      if (!response.ok) {
-        let errData;
-        try {
-          errData = await response.json();
-        } catch {
-          errData = { message: `Server returned HTTP ${response.status}` };
-        }
-
-        if (response.status === 404) {
-          const msgObj = errData.message || errData.detail;
-          setError({
-            title: "Asset Not Found (404)",
-            message: typeof msgObj === 'string' ? msgObj : (msgObj?.message || "Asset ID not found in master registry."),
-            details: msgObj?.sample_registered_assets?.map(a => `Sample registered ID: ${a}`) || []
-          });
-        } else if (response.status === 422 && errData.details) {
-          setError({
-            title: "Validation Error (422)",
-            message: errData.message || "Invalid input parameters.",
-            details: errData.details.map(d => `${d.field}: ${d.message}`)
-          });
-        } else {
-          setError({
-            title: "Assessment Error",
-            message: errData.message || errData.detail || "Server failed to process incident."
-          });
-        }
-        setPrediction(null);
-      } else {
-        const data = await response.json();
-        setPrediction(data);
-        if (data.retrieved_asset_context) {
-          setRetrievedAsset(data.retrieved_asset_context);
-        }
-        setError(null);
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.detail || 'Inference call failed');
       }
-    } catch {
-      setError({
-        title: "Connection Failed",
-        message: "Unable to connect to TEJAS ML Backend at http://127.0.0.1:8000. Please ensure the server is active."
-      });
-      setPrediction(null);
+
+      const data = await res.json();
+      setPrediction(data);
+    } catch (err) {
+      setError({ message: err.message || 'Failed to submit incident report' });
     } finally {
       setLoading(false);
     }
   };
-
+  const handleSubmit = handleSubmitIncident;
 
 
   const activeDept = retrievedAsset?.department || 'Engineering';
@@ -338,6 +283,7 @@ export default function App() {
 
   return (
     <div className="app-container">
+      <EmergencyBanner />
       {/* Top Header */}
       <header className="app-header">
         <div className="header-left">
@@ -349,18 +295,25 @@ export default function App() {
               Indian Railways — AI Automatic Block Planning
               <span className="sih-tag">TEJAS SIH26027</span>
             </h1>
-            <p>Field Officer Maintenance Incident Reporting & Automated Telemetry Resolution</p>
+            <p>Field Officer Maintenance Incident Reporting & Sub-Second WebSocket Telemetry</p>
           </div>
         </div>
 
         <div className="header-right">
+          <div className="status-pill" title="Live WebSocket Telemetry Engine">
+            <span className={`status-dot ${connectionStatus === 'CONNECTED' ? 'online' : 'offline'}`}></span>
+            <span>
+              {connectionStatus === 'CONNECTED'
+                ? 'WebSocket Stream Active (<100ms)'
+                : `Telemetry WS (${connectionStatus})`}
+            </span>
+          </div>
           <div className="status-pill" title="FastAPI ML Backend Status">
             <span className={`status-dot ${backendHealth.online ? 'online' : 'offline'}`}></span>
             <span>
               {backendHealth.online
-                ? `TEJAS Engine Ready (3,216 Registered Assets | 4 Champion Models Loaded)`
-                : 'FastAPI Offline (Port 8000)'
-              }
+                ? `TEJAS Engine Ready`
+                : 'FastAPI Offline'}
             </span>
             <button
               type="button"
@@ -374,7 +327,61 @@ export default function App() {
         </div>
       </header>
 
-      {/* Quick Incident Preset Scenarios */}
+      {/* Module Navigation Tabs */}
+      <div style={{
+        display: 'flex',
+        gap: '12px',
+        padding: '0 24px',
+        marginBottom: '20px',
+        borderBottom: '1px solid var(--border-subtle)'
+      }}>
+        <button
+          onClick={() => setActiveTab('incident_report')}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '12px 20px',
+            background: activeTab === 'incident_report' ? 'var(--bg-card-alt)' : 'transparent',
+            border: 'none',
+            borderBottom: activeTab === 'incident_report' ? '3px solid var(--ir-cyan)' : '3px solid transparent',
+            color: activeTab === 'incident_report' ? 'var(--text-primary)' : 'var(--text-secondary)',
+            fontWeight: 700,
+            fontSize: '0.95rem',
+            cursor: 'pointer'
+          }}
+        >
+          <FileText size={18} color={activeTab === 'incident_report' ? 'var(--ir-cyan)' : 'var(--text-muted)'} />
+          Maintenance Incident & Block Planner
+        </button>
+
+        <button
+          onClick={() => setActiveTab('caution_orders')}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '12px 20px',
+            background: activeTab === 'caution_orders' ? 'var(--bg-card-alt)' : 'transparent',
+            border: 'none',
+            borderBottom: activeTab === 'caution_orders' ? '3px solid var(--ir-cyan)' : '3px solid transparent',
+            color: activeTab === 'caution_orders' ? 'var(--text-primary)' : 'var(--text-secondary)',
+            fontWeight: 700,
+            fontSize: '0.95rem',
+            cursor: 'pointer'
+          }}
+        >
+          <ShieldAlert size={18} color={activeTab === 'caution_orders' ? 'var(--ir-cyan)' : 'var(--text-muted)'} />
+          Caution Orders (TSR) & Form T/409
+        </button>
+      </div>
+
+      {activeTab === 'caution_orders' ? (
+        <CautionOrders />
+      ) : (
+        <>
+          {/* Quick Incident Preset Scenarios */}
+
       <div className="presets-section">
         <div className="presets-label-bar">
           <BadgeCheck size={16} color="#38bdf8" />
@@ -752,6 +759,9 @@ export default function App() {
           </div>
         </div>
       )}
+        </>
+      )}
     </div>
   );
 }
+
