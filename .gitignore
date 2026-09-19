@@ -67,3 +67,7 @@ export_section_traffic_for_ml(2).csv
 .env
 .env.*
 !.env.example
+
+# SQLite & Local DBs
+*.db
+*.sqlite3
